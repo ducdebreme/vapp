@@ -1,14 +1,22 @@
-<template>
-  <div>
-    <button @click="locateMe">locate me</button>
+<style>
 
-    <gmap-map :center="center" :zoom="5" @center_changed="updateCenter" style="width: auto; height: 500px">
+
+
+</style>
+
+
+<template>
+  <div class="map-wrapper">
+
+    <gmap-map :center="center" :zoom="5" @center_changed="updateCenter" class="map-container">
 
       <gmap-info-window :position="$root.places[0].location">Hello world!</gmap-info-window>
 
-      <gmap-marker :key="index" v-for="(m, index) in $root.places" :icon="'/static/bar.svg'" 
+      <gmap-marker :key="index" v-for="(m, index) in $root.places" :icon="'/static/img/icons/bar.svg'" 
           :position="m.location" :clickable="true" @click="center=m.location"></gmap-marker>
     </gmap-map>
+        <button @click="locateMe">locate me</button>
+
   </div>
 </template>
 
