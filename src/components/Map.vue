@@ -1,7 +1,13 @@
 <style>
+  .map-wrapper {
+    position: relative;
+    height: calc(100vh - 4em - 32px);
+  }
 
-
-
+  .vue-map-container {
+    height: 100%;
+    width: 100%;
+  }
 </style>
 
 
